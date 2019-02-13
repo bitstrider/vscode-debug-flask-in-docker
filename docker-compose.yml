@@ -1,0 +1,15 @@
+version: '3'
+services:
+  flask-app:
+    build:
+      context: .
+      dockerfile: flask-app.Dockerfile
+    environment:
+     - DEBUGGER_PORT=5678
+     - FLASK_APP=app.py
+    ports:
+     - "8080:8080"
+     - "5678:5678"
+    # volumes:
+    #  - .:/app
+    
